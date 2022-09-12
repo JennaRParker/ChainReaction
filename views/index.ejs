@@ -11,13 +11,20 @@
 <body>
     <nav>
         <!-- Login Here. Once Logged in, Add a restaurant -->
+        <a href="/chainreaction/newchain">Add a Chain</a>
     </nav>
     <h1>Chain Reaction</h1>
     <!-- <h3> Catchy SubTitle </h3> -->
-    <section>
-<!-- Restaurant Logos Displayed here-->
+    <ul class="allofthechains">
+        <% chains.forEach(chain => { %>
+        <li>
+            <a href="/chainreaction/:id">
+            <img src=<%=chain.logo %>>
+            </a>
+        </li>
+        <% }) %>
+    </ul>
 <!-- Click on logos to take you to the restaurant show page -->
-    </section>
 </body>
 
 </html>

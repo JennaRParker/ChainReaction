@@ -15,10 +15,17 @@ mongoose.connect(process.env.DATABASE_URL);
 
 // Index Route
 app.get('/chainreaction', (req, res) => {
-    res.render('index.ejs')
+    Chain.find({}, (error, allChains) => {
+        res.render('index.ejs', {
+            chains: allChains,
+        });
+    });
 });
 
 // New
+app.get('/chainreaction/newchain', (req, res) => {
+    res.render('new.ejs')
+})
 
 // Delete
 app.delete('/chainreaction/:id', (req, res) => {
@@ -55,7 +62,7 @@ app.post('/chainreaction', (req, res) => {
         req.body.drinks = false;
     }
     Chain.create(req.body, (error, createdChain) => {
-        res.send(createdChain)
+        res.redirect('/chainreaction')
     });
 });
 
@@ -64,7 +71,7 @@ app.post('/chainreaction', (req, res) => {
 // Show
 app.get('/chainreaction/:id', (req, res) => {
     Chain.findById(req.params.id, (error, foundChain) => {
-        res.send(foundChain);
+        res.render("show.ejs");
     });
 });
 
