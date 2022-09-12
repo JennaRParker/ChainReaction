@@ -20,13 +20,28 @@
     <ul class="allofthechains">
         <% chains.forEach(chain => { %>
         <li>
-            <a href="/chainreaction/:id">
-            <img src=<%=chain.logo %>>
+            <a href="/chainreaction/<%=chain._id; %>">
+            <img src=<%=chain.logo %> width=230px height=230px>
             </a>
+            <button>
+                <a href="/chainreaction/<%=chain._id %>/edit">Edit</a>
+            </button>
+            <!-- <form class="delete">
+            <input type="submit" value="Delete" onclick="youSure()" />
+            </form>
+            <script>
+            function youSure() {
+                const result = confirm('Deleting this chain will result in permanenlty removing all associated posts. Would you like to proceed?')
+                if (result) { 
+                    const deleteInput = document.getElementsByClassName("delete");
+                    deleteInput.setAttribute("action", "/chainreaction/<%=chain._id %>_method=DELETE", "method", "POST")
+                }
+            }         
+            </script> -->
         </li>
         <% }) %>
+            
     </ul>
-<!-- Click on logos to take you to the restaurant show page -->
 </body>
 
 </html>

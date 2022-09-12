@@ -7,6 +7,15 @@
     <title>Edit Reaction</title>
 </head>
 <body>
+    <h1>CH CH CH CHAIN-GES</h1>
+    <form action="/chainreaction/<%=chain._id%>?_method=PUT" method="POST">
+        Name: <input type="text" name="name" value="<%=chain.name%>" /><br />
+        Logo Image URL: <input type="text" name="logo" value="<%=chain.logo%>" /><br />
+        Serves Breakfast: <input type="checkbox" name="breakfast" <% if(chain.breakfast===true){ %> checked <% } %> /><br />
+        Serves Dessert: <input type="checkbox" name="dessert" <% if(chain.dessert===true){ %> checked <% } %> /><br />
+        Serves Drinks: <input type="checkbox" name="drinks" <% if(chain.drinks===true){ %> checked <% } %> /><br />
+        <input type="submit" value="Submit Chain-ges" />
+    </form>
     
 </body>
 </html>

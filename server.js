@@ -28,11 +28,11 @@ app.get('/chainreaction/newchain', (req, res) => {
 })
 
 // Delete
-app.delete('/chainreaction/:id', (req, res) => {
-    Chain.findByIdAndDelete(req.params.id, (error, deletedChain) => {
-        res.redirect('/chainreaction')
-    })
-})
+// app.delete('/chainreaction/:id', (req, res) => {
+//     Chain.findByIdAndDelete(req.params.id, (error, deletedChain) => {
+//         res.redirect('/chainreaction')
+//     })
+// })
 
 // Update
 app.put('/chainreaction/:id', (req, res) => {
@@ -41,7 +41,7 @@ app.put('/chainreaction/:id', (req, res) => {
         req.body,
         { new: true},
         (error, updatedChain) => {
-            res.send(updatedChain);
+            res.redirect("/chainreaction");
         }
     )
 })
@@ -67,15 +67,22 @@ app.post('/chainreaction', (req, res) => {
 });
 
 // Edit
+app.get("/chainreaction/:id/edit", (req, res) => {
+    Chain.findById(req.params.id, (error, foundChain) => {
+        res.render('edit.ejs', {
+            chain: foundChain,
+        })
+    })
+})
 
 // Show
 app.get('/chainreaction/:id', (req, res) => {
     Chain.findById(req.params.id, (error, foundChain) => {
-        res.render("show.ejs", {
+        res.render('show.ejs', {
             chain: foundChain,
-        });
-    });
-});
+        })
+    })
+})
 
 // Databse Connection Error/ Success
 const db = mongoose.connection;
