@@ -27,21 +27,32 @@ app.get('/chainreaction/newchain', (req, res) => {
     res.render('new.ejs')
 })
 
-// Delete
-// app.delete('/chainreaction/:id', (req, res) => {
-//     Chain.findByIdAndDelete(req.params.id, (error, deletedChain) => {
-//         res.redirect('/chainreaction')
-//     })
-// })
+//Delete
+app.delete('/chainreaction/:id', (req, res) => {
+    Chain.findByIdAndDelete(req.params.id, (error, deletedChain) => {
+        res.redirect('/chainreaction')
+    })
+})
 
 // Update
 app.put('/chainreaction/:id', (req, res) => {
-    Chain.findByIdAndUpdate( 
-        req.params.id,
-        req.body,
-        { new: true},
-        (error, updatedChain) => {
-            res.redirect("/chainreaction");
+if (req.body.breakfast === 'on') {
+    req.body.breakfast = true;
+} if (req.body.dessert === 'on') {
+    req.body.dessert = true;
+} if (req.body.drinks === 'on') {
+    req.body.drinks = true;
+} if (req.body.breakfast === 'off') {
+    req.body.breakfast = false;
+} if (req.body.dessert === 'off') {
+    req.body.dessert = false;
+} if (req.body.drinks === 'off') {
+    req.body.drinks = false;
+}
+    Chain.findByIdAndUpdate(req.params.id , req.body,
+        {new: true},
+        function (error, updatedChain) {
+            res.redirect(`/chainreaction/${req.params.id}`);
         }
     )
 })
@@ -50,15 +61,15 @@ app.put('/chainreaction/:id', (req, res) => {
 app.post('/chainreaction', (req, res) => {
     if (req.body.breakfast === 'on') {
         req.body.breakfast = true;
-    } else if (req.body.dessert === 'on') {
+    } if (req.body.dessert === 'on') {
         req.body.dessert = true;
-    } else if (req.body.drinks === 'on') {
+    } if (req.body.drinks === 'on') {
         req.body.drinks = true;
-    } else if (req.body.breakfast === 'off') {
+    } if (req.body.breakfast === 'off') {
         req.body.breakfast = false;
-    } else if (req.body.dessert === 'off') {
+    } if (req.body.dessert === 'off') {
         req.body.dessert = false;
-    } else if (req.body.drinks === 'off') {
+    } if (req.body.drinks === 'off') {
         req.body.drinks = false;
     }
     Chain.create(req.body, (error, createdChain) => {

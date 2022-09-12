@@ -26,20 +26,16 @@
             <button>
                 <a href="/chainreaction/<%=chain._id %>/edit">Edit</a>
             </button>
-            <!-- <form class="delete">
-            <input type="submit" value="Delete" onclick="youSure()" />
+            <form action="/chainreaction/<%=chain._id %>?_method=DELETE" method="POST">
+            <input class="delete" type="submit" value="Delete" />
             </form>
             <script>
-            function youSure() {
-                const result = confirm('Deleting this chain will result in permanenlty removing all associated posts. Would you like to proceed?')
-                if (result) { 
-                    const deleteInput = document.getElementsByClassName("delete");
-                    deleteInput.setAttribute("action", "/chainreaction/<%=chain._id %>_method=DELETE", "method", "POST")
-                }
-            }         
-            </script> -->
-        </li>
+                document.getElementsByClassName("delete").addEventListener("submit", function(event) {
+                    event.preventDefault(); 
+                    })
+            </script>
         <% }) %>
+      </li>
             
     </ul>
 </body>
