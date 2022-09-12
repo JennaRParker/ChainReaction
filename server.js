@@ -13,10 +13,21 @@ app.use(methodOverride('_method'));
 mongoose.connect(process.env.DATABASE_URL);
 
 // Index Route
-app.get('/', (req, res) => {
+app.get('/chainreaction', (req, res) => {
     res.render('index.ejs')
 })
 
+// New
+
+// Delete
+
+// Update
+
+// Create
+
+// Edit
+
+// Show
 
 // Databse Connection Error/ Success
 const db = mongoose.connection;
