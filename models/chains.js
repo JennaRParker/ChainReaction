@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const reactionSchema = new Schema(
     {
         name: String,
-        photo: File,
+        photo: String,
         comment: String,
         rating: Number,
     }
@@ -13,10 +13,10 @@ const reactionSchema = new Schema(
 const Reaction = mongoose.model('Reaction', reactionSchema);
 module.exports = Reaction;
 
-const chainSchema = new Schmema(
+const chainSchema = new Schema(
     {
         name: String,
-        logo: File,
+        logo: String,
         breakfast: { type: Boolean, default: true },
         dessert: { type: Boolean, default: true },
         drinks: { type: Boolean, default: true},
