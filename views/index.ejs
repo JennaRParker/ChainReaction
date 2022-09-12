@@ -26,14 +26,10 @@
             <button>
                 <a href="/chainreaction/<%=chain._id %>/edit">Edit</a>
             </button>
-            <form action="/chainreaction/<%=chain._id %>?_method=DELETE" method="POST">
-            <input class="delete" type="submit" value="Delete" />
+            <form id="delete" action="/chainreaction/<%=chain._id %>?_method=DELETE" method="POST">
+                <input type="submit" value="Delete"/>
             </form>
-            <script>
-                document.getElementsByClassName("delete").addEventListener("submit", function(event) {
-                    event.preventDefault(); 
-                    })
-            </script>
+
         <% }) %>
       </li>
             
