@@ -71,7 +71,9 @@ app.post('/chainreaction', (req, res) => {
 // Show
 app.get('/chainreaction/:id', (req, res) => {
     Chain.findById(req.params.id, (error, foundChain) => {
-        res.render("show.ejs");
+        res.render("show.ejs", {
+            chain: foundChain,
+        });
     });
 });
 
