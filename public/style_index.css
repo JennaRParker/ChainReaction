@@ -19,6 +19,7 @@ nav {
     font-weight: bold;
     text-decoration: none;
     margin: auto 100px;
+    border-color: rgb(255, 0, 187)
 }
 
 #query {
@@ -29,15 +30,17 @@ nav {
     font-style: oblique;
     font-weight: bold;
     text-decoration: none;
+    border-color: rgb(255, 0, 187);
 }
 
 #s {
     font-size:30px;
-    color:black;
-    background: white;
+    color:white;
+    background:  rgb(255, 0, 187);
     border-radius: 50px;
     font-weight: bold;
-    text-decoration: none
+    text-decoration: none;
+    border-color: white;
 }
 
 h1 {
@@ -56,19 +59,21 @@ li {
 .edit {
     font-size:15px;
     color:black;
-    background: white;
+    background: rgb(239,239,239);
     font-style: oblique;
     font-weight: bold;
     text-decoration: none;
+    border-color: rgb(255, 0, 187)
 }
 
 .delete {
     font-size:15px;
     color:red;
-    background: white;
+    background: rgb(239,239,239);
     font-style: oblique;
     font-weight: bold;
     margin-left: 50x;
+    border-color:  rgb(255, 0, 187);
 }
 
 .buttons {

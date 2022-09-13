@@ -4,27 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style_show.css">
     <title>Chain Reaction</title>
 </head>
 <body>
-    <nav><a href="/chainreaction">Home</a>
-    </nav>
+    <nav><button class="homeBtn"><a class="home" href="/chainreaction" style="text-decoration:none">Home</a></button></nav>
     <h1><%=chain.name%></h1>
 
+    <div class="dropdown">
     <form>
         <label for="items">View Orders by Category:</label>
         <select name="items" id="items" >
-            <option value="food">Normal Menu</option>
-            <option value="breakfast">Breakfast</option>
-            <option value="dessert">Dessert</option>
-            <option vlaue="drinks">Drinks</option>
+            <option value="Food">Normal Menu</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Dessert">Dessert</option>
+            <option vlaue="Drinks">Drinks</option>
         </select>
-        <br><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Show">
       </form>
+    </div>
 
-    <h1><%=item%></h1><a href="/chainreaction/<%=chain._id%>/new?items=<%=item%>">add a post</a>
-  
-    <% console.log(chain.reaction.name) %>
+    <div class="add">
+        <h2><%=item%></h2>
+        
+        <% if (item !== undefined) { %> 
+            <button class="addLink"><a href="/chainreaction/<%=chain._id%>/new?items=<%=item%>" style="text-decoration:none">Post</a></button>
+        <% } %>
+    </div>
+
 </body>
 </html>

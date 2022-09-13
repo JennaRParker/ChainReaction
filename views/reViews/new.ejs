@@ -7,6 +7,7 @@
         <title>Document</title>
     </head>
     <body>
+    <nav><button><a href="/chainreaction/<%=chain._id%>" style="text-decoration:none">Back</a></button></nav>
     <h1>Add <%=item%> Order at <%=chain.name%></h1>
         <form action="/chainreaction/<%=chain._id%>?items=<%=item%>" method="POST">
         Can I Take Your Order? <input type="text" name="reaction.name"> /><br />
