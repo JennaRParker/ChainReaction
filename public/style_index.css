@@ -1,0 +1,81 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
+
+*{
+    font-family: 'Source Code Pro', monospace;
+}
+
+nav {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.btn {
+    font-size:30px;
+    color:black;
+    background: white;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    margin: auto 100px;
+}
+
+#query {
+    font-size:30px;
+    color:black;
+    background: white;
+    border-radius: 50px;
+    font-style: oblique;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#s {
+    font-size:30px;
+    color:black;
+    background: white;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none
+}
+
+h1 {
+    text-align: center;
+    font-size: 100px;
+    margin: 67px auto 5px;
+}
+
+li {
+    width: 230px;
+    padding: 25px;
+    margin: 10px;
+    display: inline-block;
+}
+
+.edit {
+    font-size:15px;
+    color:black;
+    background: white;
+    font-style: oblique;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.delete {
+    font-size:15px;
+    color:red;
+    background: white;
+    font-style: oblique;
+    font-weight: bold;
+    margin-left: 50x;
+}
+
+.buttons {
+    display: inline-flex;
+}
+
+body {
+    background-color: pink;
+}
+

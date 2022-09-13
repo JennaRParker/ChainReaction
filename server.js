@@ -7,7 +7,7 @@ const methodOverride = require('method-override');
 const Chain = require('./models/chains.js')
 
 // Middleware
-app.use(express.urlencoded({ extended: false}));
+app.use(express.urlencoded({ extended: true}));
 app.use(methodOverride('_method'));
 
 // Database Configuration
@@ -95,6 +95,7 @@ app.get('/chainreaction/:id', (req, res) => {
     })
 })
 
+app.use(express.static('public'));
 
 // Databse Connection Error/ Success
 const db = mongoose.connection;

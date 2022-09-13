@@ -5,34 +5,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style_index.css">
     <title>Chain Reaction</title>
 </head>
 
 <body>
-    <div class="navbar">
-        <nav>
-            <!-- Login Here. Once Logged in, Add a restaurant -->
-            <a href="/chainreaction/newchain">Add a Chain</a>
-        </nav>
-        <h1>Chain Reaction</h1>
-    </div>
+    <h1><img src="https://cdn1.iconfinder.com/data/icons/ui-glynh-04-of-5/100/UI_Glyph_08-15-512.png" width="80px">
+        Chain Reaction <img src="https://cdn1.iconfinder.com/data/icons/ui-glynh-04-of-5/100/UI_Glyph_08-15-512.png"
+            width="80px"> </h1>
+
+
+    <nav>
+
+        <form id="searchBar" role="search">
+            <input type="search" id="query" name="q" placeholder="Starbucks"
+                aria-label="Check if a chain already exists">
+            <button id="s">Search</button>
+        </form>
+
+        <button class="btn"><a href="/chainreaction/newchain" style="text-decoration:none">ADD NEW CHAIN</a></button>
+
+    </nav>
     <!-- <h3> Catchy SubTitle </h3> -->
     <ul class="allofthechains">
-        <% chains.forEach(chain => { %>
-        <li>
-            <a href="/chainreaction/<%=chain._id; %>">
-            <img src=<%=chain.logo %> width=230px height=230px>
-            </a>
-            <button>
-                <a href="/chainreaction/<%=chain._id %>/edit">Edit</a>
-            </button>
-            <form id="delete" action="/chainreaction/<%=chain._id %>?_method=DELETE" method="POST">
-                <input type="submit" value="Delete"/>
-            </form>
+        <% chains.forEach(chain=> { %>
+            <li>
+                <a href="/chainreaction/<%=chain._id; %>">
+                    <img src=<%=chain.logo %> width=230px height=230px>
+                </a>
+                <div class="buttons">
+                    <button class="edit">
+                        <a href="/chainreaction/<%=chain._id %>/edit" style="text-decoration:none">Edit</a>
+                    </button>
+                    <form id="delete" action="/chainreaction/<%=chain._id %>?_method=DELETE" method="POST">
+                        <input class="delete" type="submit" value="Delete" />
+                    </form>
+                </div>
+                <% }) %>
+            </li>
 
-        <% }) %>
-      </li>
-            
     </ul>
 </body>
 
