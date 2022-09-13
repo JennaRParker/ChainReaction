@@ -17,18 +17,26 @@ h1 {
 }
 
 select {
-    font-size: 30px
+    font-size: 30px;
 }
 
 input {
-    font-size: 30px
+    font-size: 30px;
+    border-radius: 50px;
+    border-color: transparent;
+    color: white;
+    background-color:rgb(239, 109, 204)
 
 }
 
 h2 {
     font-size: 70px;
     margin: 0;
-    
+
+}
+
+label {
+    font-weight: bold;
 }
 
 body {
@@ -40,11 +48,12 @@ body {
 }
 
 .addLink {
-    background: white;
+    background: rgb(239, 109, 204);
     font-size: 20px;
     border-radius: 50px;
     margin: 30px;
     font-weight: bold;
+    border-color: transparent;
 }
 
 nav {
