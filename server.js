@@ -14,6 +14,7 @@ app.use(methodOverride('_method'));
 mongoose.connect(process.env.DATABASE_URL);
 
 // Index Route
+
 app.get('/chainreaction', (req, res) => {
     Chain.find({}, (error, allChains) => {
         res.render('index.ejs', {
@@ -27,6 +28,15 @@ app.get('/chainreaction/newchain', (req, res) => {
     res.render('new.ejs')
 })
 
+app.get('/chainreaction/:id/new', (req, res) => {
+    Chain.findById(req.params.id, (error, foundChain) =>{
+        res.render('reViews/new.ejs', {
+            item: req.query.items,
+            chain: foundChain
+        });
+    });
+});
+
 //Delete
 app.delete('/chainreaction/:id', (req, res) => {
     Chain.findByIdAndDelete(req.params.id, (error, deletedChain) => {
@@ -36,19 +46,6 @@ app.delete('/chainreaction/:id', (req, res) => {
 
 // Update
 app.put('/chainreaction/:id', (req, res) => {
-if (req.body.breakfast === 'on') {
-    req.body.breakfast = true;
-} if (req.body.dessert === 'on') {
-    req.body.dessert = true;
-} if (req.body.drinks === 'on') {
-    req.body.drinks = true;
-} if (req.body.breakfast === 'off') {
-    req.body.breakfast = false;
-} if (req.body.dessert === 'off') {
-    req.body.dessert = false;
-} if (req.body.drinks === 'off') {
-    req.body.drinks = false;
-}
     Chain.findByIdAndUpdate(req.params.id , req.body,
         {new: true},
         function (error, updatedChain) {
@@ -59,23 +56,16 @@ if (req.body.breakfast === 'on') {
 
 // Create
 app.post('/chainreaction', (req, res) => {
-    if (req.body.breakfast === 'on') {
-        req.body.breakfast = true;
-    } if (req.body.dessert === 'on') {
-        req.body.dessert = true;
-    } if (req.body.drinks === 'on') {
-        req.body.drinks = true;
-    } if (req.body.breakfast === 'off') {
-        req.body.breakfast = false;
-    } if (req.body.dessert === 'off') {
-        req.body.dessert = false;
-    } if (req.body.drinks === 'off') {
-        req.body.drinks = false;
-    }
     Chain.create(req.body, (error, createdChain) => {
         res.redirect('/chainreaction')
     });
 });
+
+app.post(`/chainreaction/:id`, (req, res) => {
+    Chain.create(req.body, (error, createdPost) => {
+        res.redirect(`/chainreaction/${req.params.id}?items=${req.query.items}`)
+    })  
+})   
 
 // Edit
 app.get("/chainreaction/:id/edit", (req, res) => {
@@ -86,14 +76,25 @@ app.get("/chainreaction/:id/edit", (req, res) => {
     })
 })
 
+app.get("/chainreaction/:id/postedit", (req, res) => {
+    Chain.findById(req.params.id, (error, foundChain) => {
+        res.render('reViews/edit.ejs', {
+            chain: foundChain,
+            item: req.query.items,
+        })
+    })
+} )
+
 // Show
 app.get('/chainreaction/:id', (req, res) => {
     Chain.findById(req.params.id, (error, foundChain) => {
         res.render('show.ejs', {
             chain: foundChain,
+            item: req.query.items,
         })
     })
 })
+
 
 // Databse Connection Error/ Success
 const db = mongoose.connection;

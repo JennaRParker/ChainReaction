@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/chainreaction/<%=chain._id%>?items=<%=item%>?_method=PUT" method="POST">   
+        Can I Take Your Order? <input type="text" name="name" value="<%=chain.reaction.name%>"> /><br />
+        Go Off <textarea name="comment" value="<%=chain.reaction.comment%>"></textarea> /><br />
+        Rating <input type="range" name=rating value="<%chain.reaction.rating%>"> /><br />
+        Picture URL: <input type="text" name="photo" value="<%chain.reaction.photo%>"> /><br />
+        <input type="submit" value="Looks Up to Order" />
+        <input type="reset" />
+    </form>
+</body>
+</html>

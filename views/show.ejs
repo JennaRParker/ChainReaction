@@ -7,12 +7,23 @@
     <title>Chain Reaction</title>
 </head>
 <body>
-    show name
+    <nav><a href="/chainreaction">Home</a>
+    </nav>
     <h1><%=chain.name%></h1>
-    <img src="<%=chain.logo%>">
-    
 
-    <!-- Dropdown menu of categories- on click, show those reviews and have option to add a review -->
+    <form>
+        <label for="items">View Orders by Category:</label>
+        <select name="items" id="items" >
+            <option value="food">Normal Menu</option>
+            <option value="breakfast">Breakfast</option>
+            <option value="dessert">Dessert</option>
+            <option vlaue="drinks">Drinks</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Submit">
+      </form>
+
+    <h1><%=item%></h1><a href="/chainreaction/<%=chain._id%>/new?items=<%=item%>">add a post</a>
     <!-- Connect with Review Schema data -->
     <!-- On each review, edit button -->
     <!-- delete button -->
