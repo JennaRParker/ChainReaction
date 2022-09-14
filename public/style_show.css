@@ -6,8 +6,17 @@
 
 h1 {
     text-align: center;
-    font-size: 130px;
-    margin: 0px auto 5px
+    font-size: 100px;
+    margin: 0px auto 30px;
+    color:rgb(239, 109, 204);
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
 }
 
 .dropdown {
@@ -18,6 +27,9 @@ h1 {
 
 select {
     font-size: 30px;
+    border-color:rgb(239, 109, 204);
+    font-weight: bold;
+    color:rgb(239, 109, 204)
 }
 
 input {
@@ -32,6 +44,10 @@ input {
 h2 {
     font-size: 70px;
     margin: 20px 0;
+    color: black;
+    background-color: white;
+    height: 65px;
+    position: absolute;
 
 }
 
@@ -47,9 +63,10 @@ body {
     display: flex;  
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-image: url("https://i.ytimg.com/vi/G5rdQ8ooVwY/maxresdefault.jpg");
     height: 65px;
-    margin: 25px auto
+    margin: 25px auto;
+    position: relative;
 }
 
 .addLink {
@@ -58,9 +75,10 @@ body {
     border-radius: 50px;
     margin: 30px;
     font-weight: bold;
-    border-color: rgb(239, 109, 204);
+    border-color: black;
     height: 90px;
     width: 90px;
+    margin-left: 550px;
 }
 
 nav {
