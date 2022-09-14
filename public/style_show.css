@@ -6,7 +6,7 @@
 
 h1 {
     text-align: center;
-    font-size: 100px;
+    font-size: 130px;
     margin: 0px auto 5px
 }
 
@@ -31,7 +31,7 @@ input {
 
 h2 {
     font-size: 70px;
-    margin: 0;
+    margin: 20px 0;
 
 }
 
@@ -44,16 +44,23 @@ body {
 }
 
 .add {
-    display: inline-flex
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 65px;
+    margin: 25px auto
 }
 
 .addLink {
-    background: rgb(239, 109, 204);
-    font-size: 20px;
+    background: white;
+    font-size: 30px;
     border-radius: 50px;
     margin: 30px;
     font-weight: bold;
-    border-color: transparent;
+    border-color: rgb(239, 109, 204);
+    height: 90px;
+    width: 90px;
 }
 
 nav {
@@ -67,6 +74,6 @@ nav {
 
 .homeBtn {
     border-radius: 50px;
-    background-color:  rgb(255, 0, 187);
+    background-color:rgb(239, 109, 204)  ;
     border-color: transparent;
 }

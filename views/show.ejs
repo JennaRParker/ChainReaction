@@ -13,24 +13,22 @@
 
     <div class="dropdown">
     <form>
-        <label for="items">View Orders by Category:</label>
         <select name="items" id="items" >
-            <option value="Food">Normal Menu</option>
+            <option value="Food">Classic Menu</option>
             <option value="Breakfast">Breakfast</option>
             <option value="Dessert">Dessert</option>
             <option vlaue="Drinks">Drinks</option>
         </select>
-        <input type="submit" value="Show">
+        <input type="submit" value="View">
       </form>
     </div>
 
+    <% if (item !== undefined) { %> 
     <div class="add">
         <h2><%=item%></h2>
-        
-        <% if (item !== undefined) { %> 
             <button class="addLink"><a href="/chainreaction/<%=chain._id%>/new?items=<%=item%>" style="text-decoration:none">Post</a></button>
-        <% } %>
     </div>
+    <% } %>
 
 </body>
 </html>

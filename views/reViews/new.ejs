@@ -8,13 +8,15 @@
     </head>
     <body>
     <nav><button><a href="/chainreaction/<%=chain._id%>" style="text-decoration:none">Back</a></button></nav>
+    <main>
     <h1>Add <%=item%> Order at <%=chain.name%></h1>
         <form action="/chainreaction/<%=chain._id%>?items=<%=item%>" method="POST">
         Can I Take Your Order? <input type="text" name="reaction.name"> /><br />
-        Go Off <textarea name="reaction.comment"></textarea> /><br />
-        Rating <input type="range" name="reaction.rating"> /><br />
-        Picture URL: <input type="text" name="reaction.photo">  /><br />
+        Go Off <textarea name="reaction.comment"></textarea> <br />
+        Rating <input type="range" name="reaction.rating"> <br />
+        Picture URL: <input type="text" name="reaction.photo">  <br />
         <input type="submit" value="Order Up" />
-        </form>     
+        </form>  
+    </main>   
     </body>
     </html>
