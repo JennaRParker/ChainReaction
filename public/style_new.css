@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
+
+*{
+    font-family: 'Source Code Pro', monospace;
+}
+
+body{
+    background-image: url('http://img.auctiva.com/imgdata/1/4/8/4/1/9/7/webimg/464130768_o.jpg');
+    background-size: cover;
+    color: white;
+
+}
+
+h1 {
+    font-size: 100px;
+    transform: rotate(-4deg) rotateX(10deg) skewX(2deg);
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 160px;
+    margin-top: 0px
+}
+
+form {
+    font-size: 50px;
+}
+
+.home {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.homeBtn {
+    border-radius: 50px;
+    background-color:#4d875a;
+    border-color: white;
+    height: 80px;
+    width: 80px;
+    margin: 20px 0px 0px 20px
+}
+
+.name {
+    font-size: 20px
+}
+
+.logo{
+    font-size: 20px
+}
+
+.addBtn {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #4d875a;
+    border-color: white;
+    border-radius: 50px;
+    color: white;
+    height: 60px;
+    width: 60px;
+
+}
