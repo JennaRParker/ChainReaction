@@ -14,12 +14,12 @@ nav {
 .btn {
     font-size:25px;
     color:black;
-    background: white;
+    background: rgb(239, 109, 204);
     border-radius: 150px;
     font-weight: bold;
     text-decoration: none;
     margin: auto 100px;
-    border-color: rgb(255, 0, 187);
+    border-color: white;
     height: 130px;
     width: 130px;
 
@@ -33,13 +33,13 @@ nav {
     font-style: oblique;
     font-weight: bold;
     text-decoration: none;
-    border-color: rgb(255, 0, 187);
+    border-color: (239, 109, 204);
 }
 
 #s {
     font-size:30px;
     color:white;
-    background:  rgb(255, 0, 187);
+    background: rgb(239, 109, 204);
     border-radius: 50px;
     font-weight: bold;
     text-decoration: none;
@@ -66,7 +66,7 @@ li {
     font-style: oblique;
     font-weight: bold;
     text-decoration: none;
-    border-color: rgb(255, 0, 187)
+    border-color: (239, 109, 204)
 }
 
 .delete {
@@ -76,7 +76,7 @@ li {
     font-style: oblique;
     font-weight: bold;
     margin-left: 50x;
-    border-color:  rgb(255, 0, 187);
+    border-color:  (239, 109, 204)
 }
 
 .buttons {

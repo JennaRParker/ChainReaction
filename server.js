@@ -5,6 +5,8 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const Chain = require('./models/chains.js')
+const Reaction = require('./models/reactions.js')
+const chainSeed = require('./models/chainSeed.js')
 
 // Middleware
 app.use(express.urlencoded({ extended: true}));
@@ -12,6 +14,15 @@ app.use(methodOverride('_method'));
 
 // Database Configuration
 mongoose.connect(process.env.DATABASE_URL);
+
+// Seed
+app.get('/chainreaction/seed', (req, res) => {
+    Chain.deleteMany({}, (error, allBooks) => {});
+
+    Chain.create(chainSeed, (error, data) => {
+            res.redirect('/chainreaction/');
+    })
+})
 
 // Index Route
 
@@ -61,7 +72,7 @@ app.post('/chainreaction', (req, res) => {
     });
 });
 
-app.post(`/chainreaction/:id`, (req, res) => {
+app.post('/chainreaction/:id', (req, res) => {
     Chain.create(req.body, (error, createdPost) => {
         res.redirect(`/chainreaction/${req.params.id}?items=${req.query.items}`)
     })  
@@ -83,7 +94,7 @@ app.get("/chainreaction/:id/postedit", (req, res) => {
             item: req.query.items,
         })
     })
-} )
+})
 
 // Show
 app.get('/chainreaction/:id', (req, res) => {

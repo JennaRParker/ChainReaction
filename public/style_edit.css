@@ -14,7 +14,8 @@ body {
 }
 
 h1{
-    font-size: 60px
+    font-size: 60px;
+    margin: 5px auto auto auto
 }
 
 form {
@@ -42,4 +43,15 @@ form {
 
 .name {
     font-size: 17px;
+}
+
+.homeBtn {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: white;
+    margin: 20px auto auto 20px;
+    border-radius: 50px;
+    height: 60px;
+    width: 60px;
+
 }

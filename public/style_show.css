@@ -35,18 +35,18 @@ select {
 input {
     font-size: 30px;
     border-radius: 50px;
-    border-color: transparent;
+    border-color: white;
     color: white;
     background-color:rgb(239, 109, 204)
 
 }
 
 h2 {
-    font-size: 70px;
-    margin: 20px 0;
+    font-size: 80px;
+    margin: 0;
     color: black;
     background-color: white;
-    height: 65px;
+    height: 80px;
     position: absolute;
 
 }
@@ -64,21 +64,21 @@ body {
     justify-content: center;
     align-items: center;
     background-image: url("https://i.ytimg.com/vi/G5rdQ8ooVwY/maxresdefault.jpg");
-    height: 65px;
+    height: 80px;
     margin: 25px auto;
     position: relative;
 }
 
 .addLink {
     background: white;
-    font-size: 30px;
+    font-size: 35px;
     border-radius: 50px;
     margin: 30px;
     font-weight: bold;
     border-color: black;
-    height: 90px;
-    width: 90px;
-    margin-left: 550px;
+    height: 100px;
+    width: 100px;
+    margin-left: 575px;
 }
 
 nav {
@@ -93,5 +93,7 @@ nav {
 .homeBtn {
     border-radius: 50px;
     background-color:rgb(239, 109, 204)  ;
-    border-color: transparent;
+    border-color: white;
+    height: 80px;
+    width: 80px
 }
