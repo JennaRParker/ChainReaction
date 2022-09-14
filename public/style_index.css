@@ -12,14 +12,17 @@ nav {
 }
 
 .btn {
-    font-size:30px;
+    font-size:25px;
     color:black;
     background: white;
-    border-radius: 50px;
+    border-radius: 150px;
     font-weight: bold;
     text-decoration: none;
     margin: auto 100px;
-    border-color: rgb(255, 0, 187)
+    border-color: rgb(255, 0, 187);
+    height: 130px;
+    width: 130px;
+
 }
 
 #query {
