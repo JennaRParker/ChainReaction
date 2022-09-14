@@ -13,6 +13,22 @@ module.exports = [{
     {
     name: 'Taco Bell',
     logo: "http://1000logos.net/wp-content/uploads/2017/06/Taco-Bell-Logo.png"
+    },
+    {
+        name: "McDonald's",
+        logo: 'http://www.geofffox.com/wp-content/uploads/2014/10/Plain-McDonalds-Logo.jpg'
+    },
+    {
+        name: 'Crumbl Cookies',
+        logo: "https://cdn.dribbble.com/users/1144523/screenshots/4495773/crumbl.png"
+    },
+    {
+        name: 'Olive Garden',
+        logo: 'http://www.thecentsableshoppin.com/wp-content/uploads/2016/05/Olive-Garden-Logo-Vector.png'
+    },
+    {
+        name: "Jersey Mike's Subs",
+        logo: 'http://dev.evifs.net/wp-content/uploads/2015/07/Jersey-Mikes-Logo.png'
     }
 
 ]
