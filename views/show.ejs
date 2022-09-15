@@ -42,9 +42,10 @@
                 <% for (i=0; i < chain.reaction.length; i++) { %>
 
                     <li>
-                        <%=chain.reaction[i].order%>
-                        <%=chain.reaction[i].comment%>
-                        <%=chain.reaction[i].rating%>
+                        <%=chain.reaction[i].order%> <br>
+                        <%=chain.reaction[i].comment%> <br>
+                        <%=chain.reaction[i].rating%> <br>
+                        <button><a href="/chainreaction/<%=chain._id%>/postedit">Edit Post</a></button>
                     </li>
                     <% } %>
             </ul>

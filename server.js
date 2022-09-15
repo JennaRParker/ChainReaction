@@ -86,12 +86,7 @@ app.get('/chainreaction/:id', (req, res) => {
 ///////REACTION ROUTERS
 
 
-//Index
-// app.get('/chainreaction/:id'), (req, res) => {
-
-// }
-
-// //New
+// New
 app.get('/chainreaction/:id/new', (req, res) => {
     Chain.findById(req.params.id, (error, foundChain) =>{
         res.render('reViews/new.ejs', {
@@ -101,9 +96,7 @@ app.get('/chainreaction/:id/new', (req, res) => {
     });
 });
 
-//Delete
-
-// //Update
+//Update
 app.put(`/chainreaction/:id`, (req, res) => {
     Chain.findByIdAndUpdate(req.body,
         {new: true},
@@ -125,38 +118,17 @@ app.post('/chainreaction/:id', (req, res) => {
     })  
 })  
 
-// app.post('/chainreaction/:id', (req, res) => {
-//     reaction.create(req.body, (error, createdReaction) => {
-//         createdReaction.save();
-//         Chain.findById(req.params.id, (error, foundChain) => {
-//             foundChain.reaction.push(createdReaction) 
-//             foundChain.save()
-//         })
-//         res.redirect(`/chainreaction/${req.params.id}`)
-//     })
-// })
+// Edit
+app.get("/chainreaction/:id/postedit", (req, res) => {
+    Chain.findById(req.params.id, (error, foundChain) => {
+        res.render('reViews/edit.ejs', {
+            chain: foundChain,
+            menu: req.query.items,
+        })
+    })
+})
 
-
-//Edit
-// app.get("/chainreaction/:id/postedit", (req, res) => {
-//     Chain.findById(req.params.id, (error, foundChain) => {
-//         res.render('reViews/edit.ejs', {
-//             chain: foundChain,
-//             item: req.query.items,
-//         })
-//     })
-// })
-
-//Show
-// app.get("/chainreaction/:id/posts", (req, res) => {
-//     Chain.findById(req.params.id, (error, foundReaction) => {
-//         res.render('reViews/show.ejs', {
-//             reaction: foundReaction,
-//             item: req.query.items
-//         })
-//     })
-// })
-
+// Show 
 
 
 app.use(express.static('public'));

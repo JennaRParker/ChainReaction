@@ -4,18 +4,21 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/style_newPost.css">
         <title>Document</title>
     </head>
     <body>
-    <nav><button><a href="/chainreaction/<%=chain._id%>" style="text-decoration:none">Back</a></button></nav>
+    <nav><button class="back"><a href="/chainreaction/<%=chain._id%>" style="text-decoration:none">Back</a></button></nav>
     <main>
-    <h1>Add <%=menu%> Order at <%=chain.name%></h1>
-        <form action="/chainreaction/<%=chain._id%>" method="POST">
-        Can I Take Your Order? <input type="text" name="order" > <br />
-        Go Off <textarea name="comment" ></textarea> <br />
-        Rating <input type="range" name="rating" > <br />
-        <input type="submit" value="Order Up" />
+    <h1>"Can I Take Your <%=menu%> Order at <%=chain.name%> ?"</h1>  
+    <form action="/chainreaction/<%=chain._id%>" method="POST">
+        Order <input class="order" type="text" name="order" > 
+        Rating <input class="range" type="range" name="rating" > <br>
+        <br>
+        Go Off <textarea name="comment" >This combo changed my life. It's my go-to order.</textarea> 
+        <input class="submit" type="submit" value="Order Up" />
         </form>  
+
     </main>   
     </body>
     </html>
