@@ -97,3 +97,14 @@ nav {
     height: 80px;
     width: 80px
 }
+
+.posts {
+    width: 230px;
+    padding: 25px;
+    margin: 10px;
+    display: inline-block;
+}
+
+h3 {
+    margin-bottom: 0px;
+}

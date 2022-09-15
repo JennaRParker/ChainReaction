@@ -17,10 +17,10 @@
 
     <nav>
 
-        <form id="searchBar" role="search">
-            <input type="search" id="query" name="q" placeholder="Starbucks"
+        <form action='/chainreaction?q=' id="searchBar" role="search">
+            <input type="search" id="search" name="search" placeholder="Starbucks"
                 aria-label="Check if a chain already exists">
-            <button id="s">Search</button>
+            <button onclick="searchChain()" id="s">Search</button>
         </form>
 
         <button class="btn"><a href="/chainreaction/newchain" style="text-decoration:none">ADD NEW CHAIN</a></button>
@@ -47,4 +47,11 @@
     </ul>
 </body>
 
+<script>
+    
+// JavaScript code
+function searchChain() {
+    console.log(search)
+}
+</script>
 </html>

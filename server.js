@@ -28,6 +28,7 @@ app.get('/chainreaction', (req, res) => {
     Chain.find({}, (error, allChains) => {
         res.render('index.ejs', {
             chains: allChains,
+            search: req.query.search
         });
     });
 });

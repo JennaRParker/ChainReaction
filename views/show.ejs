@@ -41,10 +41,10 @@
             <ul>
                 <% for (i=0; i < chain.reaction.length; i++) { %>
 
-                    <li>
-                        <%=chain.reaction[i].order%> <br>
-                        <%=chain.reaction[i].comment%> <br>
-                        <%=chain.reaction[i].rating%> <br>
+                    <li class="posts">
+                        <h3><%=chain.reaction[i].order%> <br>
+                        <%=chain.reaction[i].rating%> / 100</h3><br>
+                        <p></p><%=chain.reaction[i].comment%></p> <br>
                         <button><a href="/chainreaction/<%=chain._id%>/postedit">Edit Post</a></button>
                     </li>
                     <% } %>
