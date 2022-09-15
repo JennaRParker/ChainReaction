@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style_index.css">
+    <script src="/controllers/script.js" defer></script>
     <title>Chain Reaction</title>
 </head>
 
@@ -14,17 +15,19 @@
         Chain Reaction <img src="https://cdn1.iconfinder.com/data/icons/ui-glynh-04-of-5/100/UI_Glyph_08-15-512.png"
             width="80px"> </h1>
 
-
     <nav>
-
-        <form action='/chainreaction?q=' id="searchBar" role="search">
+        <!-- <form action='/chainreaction?q=' id="searchBar" role="search">
             <input type="search" id="search" name="search" placeholder="Starbucks"
                 aria-label="Check if a chain already exists">
             <button onclick="searchChain()" id="s">Search</button>
-        </form>
+        </form> -->
+
+        <div class="search-wrapper">
+            <label class="search" for="search" style="font-size: 30px" >Search For Chain</label>
+            <input type="search" id="search" data-search>
+        </div>
 
         <button class="btn"><a href="/chainreaction/newchain" style="text-decoration:none">ADD NEW CHAIN</a></button>
-
     </nav>
     <!-- <h3> Catchy SubTitle </h3> -->
     <ul class="allofthechains">
@@ -43,7 +46,6 @@
                 </div>
                 <% }) %>
             </li>
-
     </ul>
 </body>
 

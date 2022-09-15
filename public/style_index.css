@@ -36,7 +36,7 @@ nav {
     border-color: (239, 109, 204);
 }
 
-#s {
+/* #s {
     font-size:30px;
     color:white;
     background: rgb(239, 109, 204);
@@ -44,6 +44,10 @@ nav {
     font-weight: bold;
     text-decoration: none;
     border-color: white;
+} */
+
+.hide {
+    display: none;
 }
 
 h1 {
