@@ -24,7 +24,7 @@ app.get('/chainreaction/seed', (req, res) => {
 })
 
 // Index Route
-app.get('/chainreaction', (req, res) => {
+app.get('/', (req, res) => {
     Chain.find({}, (error, allChains) => {
         res.render('index.ejs', {
             chains: allChains,
