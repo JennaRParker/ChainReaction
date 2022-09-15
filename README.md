@@ -96,8 +96,14 @@ app.get('/chainreaction/newchain', (req, res) => {
 ```
 ![show page chainreaction](https://user-images.githubusercontent.com/111609911/190502252-b9511bf9-d123-49ba-8441-7c219deec348.png)
 
+## Next Steps & Known Bugs
 
-
+* _Reaction posts to appear only under the specified menu where they were added_
+* _Search bar operating on the index page to sift through the chain names_
+* _The ability to edit posts_
+* _The ability to delete posts_
+* _The ability to alphabetize the restaruants on the index page_
+* _The ability to sort the reactions by ranking from highest to lowest on the show page_
 
 
 
