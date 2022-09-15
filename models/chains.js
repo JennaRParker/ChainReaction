@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 const Reaction = new Schema(
     {
-        order: {type: String, required: true },
-        comment: {type: String, required: true },
+        order: String,
+        comment: String,
         rating: {type: Number, required: true }, 
         menu: {type: String},
     },

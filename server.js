@@ -15,7 +15,7 @@ app.use(methodOverride('_method'));
 mongoose.connect(process.env.DATABASE_URL);
 
 // Seed
-app.get('/chainreaction/seed', (req, res) => {
+app.get('/seed', (req, res) => {
     Chain.deleteMany({}, (error, allChains) => {});
 
     Chain.create(chainSeed, (error, data) => {
@@ -96,6 +96,8 @@ app.get('/chainreaction/:id/new', (req, res) => {
         });
     });
 });
+
+//Delete
 
 //Update
 app.put(`/chainreaction/:id`, (req, res) => {

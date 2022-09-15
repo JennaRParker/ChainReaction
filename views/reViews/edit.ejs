@@ -8,11 +8,13 @@
 </head>
 <body>
     <form action="/chainreaction/<%=chain._id%>?_method=PUT" method="POST">   
-        Order: <input type="text" name="order" value="<%chain.reaction[0].order%>"> <br />
-        Go Off: <textarea name="comment" value="<%=chain.comment%>"></textarea> <br />
-        Rating <input type="range" name=rating value="<%=chain.rating%>" > <br />
+        <% for (i=0; i < chain.reaction.length; i++) { %>
+        Order: <input type="text" name="order" value="<%=chain.reaction[i].order%>"> <br />
+        Go Off: <textarea name="comment" value="<%=chain.reaction[i].comment%>"></textarea> <br />
+        Rating <input type="range" name=rating value="<%=chain.reaction[i].rating%>" > <br />
         <input type="submit" value="Looks Up to Order" />
         <input type="reset" />
+        <% } %>
     </form>
 </body>
 </html>
