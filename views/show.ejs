@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,29 +8,44 @@
     <link rel="stylesheet" href="/style_show.css">
     <title>Chain Reaction</title>
 </head>
+
 <body>
-    <nav><button class="homeBtn"><a class="home" href="/chainreaction" style="text-decoration:none">Home</a></button></nav>
-    <h1><%=chain.name%></h1>
+    <nav><button class="homeBtn"><a class="home" href="/chainreaction" style="text-decoration:none">Home</a></button>
+    </nav>
+    <h1>
+        <%=chain.name%>
+    </h1>
 
     <div class="dropdown">
-    <form>
-        <select name="items" id="items" >
-            <option value="Food">Classic Menu</option>
-            <option value="Breakfast">Breakfast</option>
-            <option value="Dessert">Dessert</option>
-            <option vlaue="Drinks">Drinks</option>
-        </select>
-        <input type="submit" value="View">
-      </form>
+        <form>
+            <select name="items" id="items">
+                <option value="Food">Classic Menu</option>
+                <option value="Breakfast">Breakfast</option>
+                <option value="Dessert">Dessert</option>
+                <option vlaue="Drinks">Drinks</option>
+            </select>
+            <input type="submit" value="View">
+        </form>
     </div>
 
-    <% if (item !== undefined) { %> 
-    <div class="add">
-        <h2><%=item%></h2>
-            <button class="addLink"><a href="/chainreaction/<%=chain._id%>/new?items=<%=item%>" style="text-decoration:none">Post</a></button>
-    </div>
+    <% if (menu !==undefined) { %>
+        <div class="add">
+            <h2>
+                <%=menu%>
+            </h2>
+            <button class="addLink"><a href="/chainreaction/<%=chain._id%>/new?items=<%=menu%>"
+                    style="text-decoration:none">Post</a></button>
+        </div>
+     <% } %>
 
-    <% } %>
+    <ul>
+        <% chain.reaction.forEach(reaction => { %>
+            <li>
+                <%=chain.reaction%>
+                </li>
+        <% }) %>
+    </ul>
 
 </body>
+
 </html>

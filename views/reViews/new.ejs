@@ -9,11 +9,11 @@
     <body>
     <nav><button><a href="/chainreaction/<%=chain._id%>" style="text-decoration:none">Back</a></button></nav>
     <main>
-    <h1>Add <%=item%> Order at <%=chain.name%></h1>
-        <form action="/chainreaction/<%=chain._id%>?items=<%=item%>" method="POST">
-        Can I Take Your Order? <input type="text" name="order"> <br />
-        Go Off <textarea name="comment"></textarea> <br />
-        Rating <input type="range" name="rating"> <br />
+    <h1>Add <%=menu%> Order at <%=chain.name%></h1>
+        <form action="/chainreaction/<%=chain._id%>" method="POST">
+        Can I Take Your Order? <input type="text" name="order" > <br />
+        Go Off <textarea name="comment" ></textarea> <br />
+        Rating <input type="range" name="rating" > <br />
         <input type="submit" value="Order Up" />
         </form>  
     </main>   

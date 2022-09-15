@@ -5,7 +5,6 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const Chain = require('./models/chains.js')
-const Reaction = require('./models/reactions.js')
 const chainSeed = require('./models/chainSeed.js')
 
 // Middleware
@@ -17,15 +16,14 @@ mongoose.connect(process.env.DATABASE_URL);
 
 // Seed
 app.get('/chainreaction/seed', (req, res) => {
-    Chain.deleteMany({}, (error, allBooks) => {});
+    Chain.deleteMany({}, (error, allChains) => {});
 
     Chain.create(chainSeed, (error, data) => {
-            res.redirect('/chainreaction/');
+            res.redirect('/chainreaction/')
     })
 })
 
 // Index Route
-
 app.get('/chainreaction', (req, res) => {
     Chain.find({}, (error, allChains) => {
         res.render('index.ejs', {
@@ -38,15 +36,6 @@ app.get('/chainreaction', (req, res) => {
 app.get('/chainreaction/newchain', (req, res) => {
     res.render('new.ejs')
 })
-
-app.get('/chainreaction/:id/new', (req, res) => {
-    Chain.findById(req.params.id, (error, foundChain) =>{
-        res.render('reViews/new.ejs', {
-            item: req.query.items,
-            chain: foundChain
-        });
-    });
-});
 
 //Delete
 app.delete('/chainreaction/:id', (req, res) => {
@@ -71,12 +60,7 @@ app.post('/chainreaction', (req, res) => {
         res.redirect('/chainreaction')
     });
 });
-
-app.post('/chainreaction/:id', (req, res) => {
-    Chain.create(req.body, (error, createdPost) => {
-        res.redirect(`/chainreaction/${req.params.id}?items=${req.query.items}`)
-    })  
-})   
+ 
 
 // Edit
 app.get("/chainreaction/:id/edit", (req, res) => {
@@ -87,24 +71,93 @@ app.get("/chainreaction/:id/edit", (req, res) => {
     })
 })
 
-app.get("/chainreaction/:id/postedit", (req, res) => {
-    Chain.findById(req.params.id, (error, foundChain) => {
-        res.render('reViews/edit.ejs', {
-            chain: foundChain,
-            item: req.query.items,
-        })
-    })
-})
 
 // Show
 app.get('/chainreaction/:id', (req, res) => {
     Chain.findById(req.params.id, (error, foundChain) => {
         res.render('show.ejs', {
             chain: foundChain,
-            item: req.query.items,
+            menu: req.query.items,
         })
     })
 })
+
+
+///////REACTION ROUTERS
+
+
+//Index
+// app.get('/chainreaction/:id'), (req, res) => {
+
+// }
+
+// //New
+app.get('/chainreaction/:id/new', (req, res) => {
+    Chain.findById(req.params.id, (error, foundChain) =>{
+        res.render('reViews/new.ejs', {
+            menu: req.query.items,
+            chain: foundChain
+        });
+    });
+});
+
+//Delete
+
+// //Update
+app.put(`/chainreaction/:id`, (req, res) => {
+    Chain.findByIdAndUpdate(req.body,
+        {new: true},
+        function (error, updatedChain) {
+            res.redirect(`/chainreaction/${req.params.id}/?items=${req.query.items}`);
+        }
+    )
+})
+
+// Create
+app.post('/chainreaction/:id', (req, res) => {
+    Chain.findById(req.params.id, (error, foundChain) => {
+        foundChain.reaction.push(req.body);
+        console.log(req.body)
+        foundChain.save(function(err) {
+            console.log(foundChain)
+            res.redirect(`/chainreaction/${req.params.id}`)
+        })
+    })  
+})  
+
+// app.post('/chainreaction/:id', (req, res) => {
+//     reaction.create(req.body, (error, createdReaction) => {
+//         createdReaction.save();
+//         Chain.findById(req.params.id, (error, foundChain) => {
+//             foundChain.reaction.push(createdReaction) 
+//             foundChain.save()
+//         })
+//         res.redirect(`/chainreaction/${req.params.id}`)
+//     })
+// })
+
+
+//Edit
+// app.get("/chainreaction/:id/postedit", (req, res) => {
+//     Chain.findById(req.params.id, (error, foundChain) => {
+//         res.render('reViews/edit.ejs', {
+//             chain: foundChain,
+//             item: req.query.items,
+//         })
+//     })
+// })
+
+//Show
+// app.get("/chainreaction/:id/posts", (req, res) => {
+//     Chain.findById(req.params.id, (error, foundReaction) => {
+//         res.render('reViews/show.ejs', {
+//             reaction: foundReaction,
+//             item: req.query.items
+//         })
+//     })
+// })
+
+
 
 app.use(express.static('public'));
 

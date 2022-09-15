@@ -29,6 +29,14 @@ module.exports = [{
     {
         name: "Jersey Mike's Subs",
         logo: 'http://dev.evifs.net/wp-content/uploads/2015/07/Jersey-Mikes-Logo.png'
+    },
+    {
+        name: 'Dairy Queen',
+        logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Dairy_Queen_logo.svg/1200px-Dairy_Queen_logo.svg.png'
+    },
+    {
+        name: "Raising Cane's",
+        logo: "https://woodlawnhighbr.org/wp-content/uploads/2019/08/1200px-Raising_Canes_Chicken_Fingers_logo.svg_-1080x518.png"
     }
 
 ]
