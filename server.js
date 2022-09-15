@@ -41,7 +41,7 @@ app.get('/chainreaction/newchain', (req, res) => {
 //Delete
 app.delete('/chainreaction/:id', (req, res) => {
     Chain.findByIdAndDelete(req.params.id, (error, deletedChain) => {
-        res.redirect('/chainreaction')
+        res.redirect('/')
     })
 })
 
@@ -58,7 +58,7 @@ app.put('/chainreaction/:id', (req, res) => {
 // Create
 app.post('/chainreaction', (req, res) => {
     Chain.create(req.body, (error, createdChain) => {
-        res.redirect('/chainreaction')
+        res.redirect('/')
     });
 });
  
