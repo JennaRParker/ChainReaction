@@ -34,19 +34,19 @@ app.get('/', (req, res) => {
 });
 
 // New
-app.get('/newchain', (req, res) => {
+app.get('/chainreaction/newchain', (req, res) => {
     res.render('new.ejs')
 })
 
 //Delete
-app.delete('/:id', (req, res) => {
+app.delete('/chainreaction/:id', (req, res) => {
     Chain.findByIdAndDelete(req.params.id, (error, deletedChain) => {
         res.redirect('/chainreaction')
     })
 })
 
 // Update
-app.put('/:id', (req, res) => {
+app.put('/chainreaction/:id', (req, res) => {
     Chain.findByIdAndUpdate(req.params.id , req.body,
         {new: true},
         function (error, updatedChain) {
@@ -56,7 +56,7 @@ app.put('/:id', (req, res) => {
 })
 
 // Create
-app.post('/', (req, res) => {
+app.post('/chainreaction', (req, res) => {
     Chain.create(req.body, (error, createdChain) => {
         res.redirect('/chainreaction')
     });
@@ -64,7 +64,7 @@ app.post('/', (req, res) => {
  
 
 // Edit
-app.get("/:id/edit", (req, res) => {
+app.get("/chainreaction/:id/edit", (req, res) => {
     Chain.findById(req.params.id, (error, foundChain) => {
         res.render('edit.ejs', {
             chain: foundChain,
@@ -74,7 +74,7 @@ app.get("/:id/edit", (req, res) => {
 
 
 // Show
-app.get('/:id', (req, res) => {
+app.get('/chainreaction/:id', (req, res) => {
     Chain.findById(req.params.id, (error, foundChain) => {
         res.render('show.ejs', {
             chain: foundChain,
@@ -88,7 +88,7 @@ app.get('/:id', (req, res) => {
 
 
 // New
-app.get('/:id/new', (req, res) => {
+app.get('/chainreaction/:id/new', (req, res) => {
     Chain.findById(req.params.id, (error, foundChain) =>{
         res.render('reViews/new.ejs', {
             menu: req.query.items,
@@ -98,7 +98,7 @@ app.get('/:id/new', (req, res) => {
 });
 
 //Update
-app.put(`/:id`, (req, res) => {
+app.put(`/chainreaction/:id`, (req, res) => {
     Chain.findByIdAndUpdate(req.body,
         {new: true},
         function (error, updatedChain) {
@@ -108,7 +108,7 @@ app.put(`/:id`, (req, res) => {
 })
 
 // Create
-app.post('/:id', (req, res) => {
+app.post('/chainreaction/:id', (req, res) => {
     Chain.findById(req.params.id, (error, foundChain) => {
         foundChain.reaction.push(req.body);
         console.log(req.body)
@@ -120,7 +120,7 @@ app.post('/:id', (req, res) => {
 })  
 
 // Edit
-app.get("/:id/postedit", (req, res) => {
+app.get("/chainreaction/:id/postedit", (req, res) => {
     Chain.findById(req.params.id, (error, foundChain) => {
         res.render('reViews/edit.ejs', {
             chain: foundChain,
