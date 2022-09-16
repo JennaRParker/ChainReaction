@@ -14,6 +14,7 @@
 * _RESTful Routes_
 * _CSS_
 * _HTML_
+* _Postman_
 
 ## Getting Started
 ### Open Chain Reaction https://chain-react.herokuapp.com/
